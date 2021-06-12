@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const authRoutes = require("./auth");
+const InterviewRouter = require("./interview")
 
 /* GET home page */
 router.get("/", (req, res, next) => {
@@ -7,8 +8,6 @@ router.get("/", (req, res, next) => {
 });
 
 router.use("/auth", authRoutes);
-
-const InterviewRouter = require("./interview")
 
 router.use("/interview", InterviewRouter);
 
