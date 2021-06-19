@@ -15,6 +15,10 @@ const InterviewSchema = new Schema({
     type: Date, 
     default: Date.now()
   },
+
+  description: {
+    type: String,
+  },
   
 });
 

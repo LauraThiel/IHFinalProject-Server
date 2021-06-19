@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 
-const InterviewSchema = new Schema({
+const QuestionAnswerSchema = new Schema({
   category: { 
     type: String, 
     required: true
@@ -8,7 +8,8 @@ const InterviewSchema = new Schema({
 
   question: { 
     type: String, 
-    required: true 
+    required: true,
+    unique: true,
   },
 
   intention: { 
@@ -23,11 +24,11 @@ const InterviewSchema = new Schema({
 
   rating: { 
     type: Number, 
-    required: true 
+    required: true
   },
   
 });
 
-const Interview = model("Interview", InterviewSchema);
+const QuestionAnswer = model("QuestionAnswer", QuestionAnswerSchema);
 
-module.exports = Interview;
+module.exports = QuestionAnswer;
