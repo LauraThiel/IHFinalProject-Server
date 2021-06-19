@@ -1,19 +1,29 @@
 const { Schema, model } = require("mongoose");
 
 const InterviewSchema = new Schema({
-  role: { 
+  category: { 
     type: String, 
     required: true
   },
 
-  company: { 
+  question: { 
     type: String, 
     required: true 
   },
 
-  date: { 
-    type: Date, 
-    default: Date.now()
+  intention: { 
+    type: String, 
+    required: false
+  },
+
+  answer: { 
+    type: String, 
+    required: true 
+  },
+
+  rating: { 
+    type: Number, 
+    required: true 
   },
   
 });
