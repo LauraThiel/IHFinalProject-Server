@@ -19,7 +19,10 @@ router.get("/:interviewId", (req, res) => {
 
 router.post("/add", isLoggedIn, (req, res) => {
   Interview.findOne({
-    Role: req.body.title,
+    role: req.body.role,
+    company: req.body.company,
+    date: req.body.date,
+    description: req.body.description,
   }).then((AddedInterview) => {
     if (SingleInterview)
     return res
@@ -28,12 +31,13 @@ router.post("/add", isLoggedIn, (req, res) => {
   });
 })
 
-  const { role, company, date } = req.body; 
+  const { role, company, date, description } = req.body; 
 
   Interview.create({
     role,
     company,
     date,
+    description
   })
   .then((createdInterview) => {
     res.json({ interview: createdInterview })})
