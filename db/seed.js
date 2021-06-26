@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 require("dotenv/config")
-const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/finalproject";
+//const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/finalproject";
+const MONGO_URI = "mongodb+srv://admin:pmcoach2021@cluster0.4osya.mongodb.net/pmcareercoach-db?retryWrites=true&w=majority"
 
 const Interview = require("../models/Interview.model");
 const QuestionAnswer = require("../models/QuestionAnswer.model");
